@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Style - nknight amamiya github</title>
+</head>
+
+<body>
+    <div>
+    value or color
+
+        <div id="dydiv"></div>
+        <input type="text">
+    </div>
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    #dydiv {
+        height: 100px;
+        width: 300px;
+        border: 2px solid black;
+        transition: all 0.5s ease;
+        margin: 20px 0;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ddddfd;
+    }
+
+    input {
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 40px;
+        font-size: 3vh;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 600px) {
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: block;
+        }
+    }
+</style>
+
+<script>
+    let div = document.querySelector('#dydiv');
+    let input = document.querySelector('input');
+
+    input.addEventListener('input', function () {
+        div.style.borderRadius = input.value + 'px';
+        div.style.background = input.value;
+    });
+</script>
+
+</html>
